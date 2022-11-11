@@ -40,12 +40,12 @@ if (!is_dir($path)) {
 //     fwrite($html, $str_e);
 //     // print_r(scandir(""));
 // }
-$poemsPath = ".";
+$poemsPath = "./poems";
 
 if (is_dir($poemsPath)) {
     $files = scandir($poemsPath, 1);
     for ($i = 0; $i < count($files); $i++) {
-        if ($files[$i] != '.' && $files[$i] != '..' && $files[$i] != 'index.php' && $files[$i] != 'arrays.php' && $files[$i] != 'new' && $files[$i] != '.git') {
+        if ($files[$i] != '.' && $files[$i] != '..') {
             $filename = $poemsPath . "/" . $files[$i];
             echo $filename . "\n";
             $file = fopen($filename, "r");
